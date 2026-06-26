@@ -1,7 +1,6 @@
 # Portfolio X
 
 > Professional portfolio of Akash Karthik.
-
 ---
 
 ## Tech Stack
@@ -41,3 +40,8 @@ v2.0 (Development)
 ## Author
 
 Akash Karthik P
+
+This portfolio is the personal work of Akash Karthik.
+
+The source code is provided for viewing purposes only.
+Please do not copy or redistribute the design or content without permission.
