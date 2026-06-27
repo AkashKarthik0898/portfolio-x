@@ -352,7 +352,7 @@ Visual direction:
 - Strong left-aligned headline block
 - Clear supporting paragraph
 - CTA row
-- Professional image placeholder on the right
+- Professional image on the right
 
 ### Engineering Snapshot
 
@@ -533,7 +533,7 @@ To preserve a Lighthouse score above 95, the design implementation should:
 - Keep CSS modular by purpose
 - Keep components visually consistent
 - Prefer reusable spacing and text utility patterns only if they remain maintainable without utility-framework sprawl
-- Ensure any portrait placeholder and resume PDF placeholder can be swapped easily later
+- Ensure the portrait image and resume PDF can be swapped easily later
 
 ---
 

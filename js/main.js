@@ -401,7 +401,7 @@
   };
 
   const initStatsCounter = () => {
-    const counterElements = Array.from(document.querySelectorAll('#snapshot h3')).filter((element) => /^\d+/.test((element.textContent || '').trim()));
+    const counterElements = Array.from(document.querySelectorAll('#snapshot h3')).filter((element) => /^\d+/.exec((element.textContent || '').trim()) !== null);
 
     if (!counterElements.length) {
       return;

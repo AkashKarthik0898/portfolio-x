@@ -155,7 +155,7 @@ Not started yet:
 - Homepage HTML implementation
 - CSS system implementation
 - JavaScript enhancements
-- Asset integration beyond approved placeholders
+- Asset integration beyond the approved profile image and resume document
 
 ---
 
@@ -193,14 +193,11 @@ Technology should support the story, not become the story.
 
 ---
 
-## Placeholders
+## Asset Notes
 
-The only placeholders intended for the final site are:
+The profile image and resume document should remain easy to replace as newer assets become available.
 
-- Profile image
-- Resume PDF
-
-All other content and structure should be complete and intentional.
+All other content and structure should remain complete and intentional.
 
 ---
 

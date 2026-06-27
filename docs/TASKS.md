@@ -127,8 +127,8 @@ Build a semantic, accessible, SEO-friendly `index.html`.
 - Add semantic sections for each homepage block
 - Implement accessible navigation and anchor links
 - Use proper heading hierarchy
-- Add placeholder portrait image reference
-- Add placeholder resume PDF reference
+- Add portrait image reference
+- Add resume PDF reference
 - Ensure all content is meaningful without CSS or JavaScript
 
 #### Exit Criteria
@@ -259,7 +259,7 @@ Ensure the final site meets performance and technical quality goals.
 
 - Optimize font loading strategy
 - Minimize render-blocking overhead
-- Validate image placeholder usage and swap strategy
+- Validate image asset usage and swap strategy
 - Keep CSS and JS lean
 - Verify page title and meta description
 - Confirm semantic structure supports SEO
@@ -288,7 +288,7 @@ Ensure the final site meets performance and technical quality goals.
 - Implement headline exactly as approved
 - Add supporting subtitle
 - Add primary and secondary CTA buttons
-- Add portrait placeholder area
+- Add portrait area
 - Maintain a strong two-column desktop composition
 
 ### Engineering Snapshot

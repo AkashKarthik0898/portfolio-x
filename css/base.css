@@ -492,10 +492,6 @@ select {
   color: var(--color-text);
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: var(--color-text-muted);
-}
 
 /* ========================================
    Utility Classes

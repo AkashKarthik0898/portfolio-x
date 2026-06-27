@@ -237,7 +237,7 @@ I modernize legacy ETL systems, optimize enterprise-scale data pipelines and bui
 
 ### Visual
 
-- Professional portrait placeholder on the right side
+- Professional portrait on the right side
 
 ### Hero Purpose
 
@@ -505,7 +505,7 @@ Do not begin:
 - HTML implementation
 - CSS implementation
 - JavaScript behavior implementation
-- Asset production beyond explicit placeholders
+- Asset production beyond the approved profile image and resume document
 
 These should wait until documentation approval.
 

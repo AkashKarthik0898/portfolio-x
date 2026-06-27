@@ -185,7 +185,7 @@ I modernize legacy ETL systems, optimize enterprise-scale data pipelines and bui
 
 ### Right Side
 
-- Professional portrait placeholder
+- Professional portrait image
 
 The hero must create immediate clarity about Akash’s specialization and enterprise data platform focus.
 
@@ -325,9 +325,9 @@ Recruiters should understand the owner’s value quickly.
 
 ---
 
-## Placeholders Allowed
+## Asset Flexibility
 
-The only placeholders that may be used are:
+The following assets should remain easy to replace as newer versions become available:
 
 - Profile image
 - Resume PDF
