@@ -161,6 +161,127 @@ main > section:first-of-type {
   box-shadow: 0 12px 28px rgba(56, 189, 248, 0.16);
 }
 
+@media (max-width: 47.99875rem) {
+  #top {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 80;
+    padding-block: 0.35rem;
+    transition:
+      background-color var(--duration-base) var(--ease-standard),
+      box-shadow var(--duration-base) var(--ease-standard);
+  }
+
+  #top[data-scrolled="true"] {
+    background: rgba(11, 17, 32, 0.94);
+    box-shadow: 0 14px 36px rgba(2, 6, 23, 0.24);
+  }
+
+  #navigation {
+    position: relative;
+    width: min(100% - 1rem, var(--container-max));
+    padding: 0.7rem 0.85rem;
+    gap: 0.6rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 999px;
+    background: rgba(2, 6, 23, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    backdrop-filter: blur(16px);
+  }
+
+  #navigation > p:first-child {
+    flex: 1 1 auto;
+    font-size: 0.96rem;
+    line-height: 1.1;
+  }
+
+  #navigation > p:nth-of-type(2),
+  #navigation > p:last-child,
+  #navigation ul {
+    display: none;
+  }
+
+  #navigation-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.55rem;
+    padding: 0.7rem 0.95rem;
+    border: 1px solid rgba(56, 189, 248, 0.24);
+    border-radius: 999px;
+    background: rgba(14, 165, 233, 0.16);
+    color: var(--color-text);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: transform var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard);
+  }
+
+  #navigation-toggle:hover,
+  #navigation-toggle:focus-visible {
+    transform: translateY(-1px);
+    background: rgba(14, 165, 233, 0.24);
+  }
+
+  #navigation[data-menu-open="true"] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.95rem 0.95rem 1rem;
+    border-radius: 1rem;
+    background: rgba(2, 6, 23, 0.98);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
+    position: absolute;
+    inset-inline: 0;
+    top: calc(100% + 0.45rem);
+    z-index: 90;
+  }
+
+  #navigation[data-menu-open="true"] > p:nth-of-type(2) {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.35rem;
+  }
+
+  #navigation[data-menu-open="true"] ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.3rem;
+  }
+
+  #navigation[data-menu-open="true"] ul li {
+    width: 100%;
+  }
+
+  #navigation[data-menu-open="true"] ul a {
+    width: 100%;
+    min-height: 2.85rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: 0.8rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.83), rgba(30, 41, 59, 0.78));
+    color: var(--color-text);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+  }
+
+  #navigation[data-menu-open="true"] > p:last-child {
+    display: block;
+    width: 100%;
+    margin-top: 0.35rem;
+  }
+
+  #navigation[data-menu-open="true"] > p:last-child a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ========================================
    Shared Section Patterns
 ======================================== */

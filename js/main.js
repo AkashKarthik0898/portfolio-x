@@ -110,11 +110,16 @@
     }
 
     const updateScrollState = () => {
-      header.dataset.scrolled = window.scrollY > 12 ? 'true' : 'false';
+      if (window.innerWidth <= MOBILE_BREAKPOINT) {
+        header.dataset.scrolled = window.scrollY > 12 ? 'true' : 'false';
+      } else {
+        header.dataset.scrolled = 'false';
+      }
     };
 
     updateScrollState();
     window.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState, { passive: true });
   };
 
   const initMobileNavigation = (nav) => {
@@ -167,6 +172,12 @@
       toggleButton.setAttribute('aria-expanded', String(isOpen));
       toggleButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
       toggleButton.textContent = isOpen ? 'Close' : 'Menu';
+      nav.dataset.menuOpen = isOpen ? 'true' : 'false';
+
+      const header = nav.closest('#top');
+      if (header) {
+        header.dataset.scrolled = window.scrollY > 12 && !isOpen ? 'true' : 'false';
+      }
     };
 
     const closeMenu = () => {
