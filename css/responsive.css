@@ -1,0 +1,285 @@
+/* ========================================
+   Portfolio X - Responsive Styles
+   Mobile-first breakpoint refinements only.
+   Existing desktop foundations remain unchanged.
+======================================== */
+
+/* ========================================
+   576px+
+======================================== */
+
+@media (min-width: 36rem) {
+  main {
+    width: min(100% - 2.5rem, var(--container-max));
+  }
+
+  main > section {
+    padding-block: var(--space-24);
+  }
+
+  #navigation {
+    padding-block: var(--space-5);
+  }
+
+  #navigation ul {
+    gap: var(--space-3) var(--space-5);
+  }
+
+  #hero {
+    padding-block-start: var(--space-20);
+    gap: var(--space-12);
+  }
+
+  #hero h1 {
+    max-width: 8.5ch;
+  }
+
+  #hero > div > p:last-child {
+    gap: var(--space-4);
+  }
+
+  #snapshot ul,
+  #highlights ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tech-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tech-stack > header {
+    grid-column: 1 / -1;
+  }
+
+}
+
+/* ========================================
+   768px+
+======================================== */
+
+@media (min-width: 48rem) {
+  main {
+    width: min(100% - 3rem, var(--container-max));
+  }
+
+  main > section {
+    padding-block: var(--space-24);
+  }
+
+  #navigation {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-4) var(--space-6);
+  }
+
+  #navigation > p:nth-of-type(2) {
+    margin: 0;
+  }
+
+  #navigation ul {
+    justify-content: center;
+  }
+
+  #hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+    gap: var(--space-12);
+    min-height: calc(100vh - 7rem);
+    padding-block-start: var(--space-20);
+    padding-block-end: var(--space-20);
+  }
+
+  #hero aside {
+    padding: var(--space-8);
+  }
+
+  #hero h1 + p {
+    max-width: 34rem;
+  }
+
+  #hero aside {
+    align-self: stretch;
+  }
+
+  #experience {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #experience > header {
+    grid-column: 1 / -1;
+  }
+
+  #resume {
+    display: grid;
+    gap: var(--space-5);
+    align-items: center;
+  }
+
+  #contact .contact-copy,
+  #contact .contact-form {
+    padding: var(--space-8);
+  }
+}
+
+/* ========================================
+   992px+
+======================================== */
+
+@media (min-width: 62rem) {
+  main {
+    width: min(100% - 4rem, var(--container-max));
+  }
+
+  main > section {
+    padding-block: var(--space-28);
+  }
+
+  #navigation {
+    gap: var(--space-4) var(--space-8);
+  }
+
+  #navigation ul {
+    gap: var(--space-2) var(--space-6);
+  }
+
+  #hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  }
+
+  #hero h1 {
+    max-width: 8ch;
+  }
+
+  #snapshot ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #philosophy {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    column-gap: var(--space-8);
+    align-items: start;
+  }
+
+  #philosophy > header,
+  #philosophy > p:first-of-type {
+    grid-column: 1;
+  }
+
+  #philosophy > p:last-of-type,
+  #philosophy ul {
+    grid-column: 2;
+  }
+
+  #highlights ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tech-stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #tech-stack > header {
+    grid-column: 1 / -1;
+  }
+
+  #footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3) var(--space-8);
+    align-items: start;
+  }
+
+  #footer h2,
+  #footer p:nth-of-type(3),
+  #footer p:nth-of-type(5) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ========================================
+   1200px+
+======================================== */
+
+@media (min-width: 75rem) {
+  main > section {
+    padding-block: var(--space-32);
+  }
+
+  #hero {
+    grid-template-columns: minmax(0, 1.25fr) minmax(22rem, 0.75fr);
+    gap: var(--space-16);
+  }
+
+  #hero h1 + p,
+  #hero h1 + p + p {
+    max-width: 40rem;
+  }
+
+  #experience {
+    gap: var(--space-6);
+  }
+
+  #highlights ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #tech-stack {
+    gap: var(--space-5);
+  }
+
+  #resume {
+    grid-template-columns: minmax(0, 1.25fr) auto;
+    gap: var(--space-8);
+  }
+
+  #resume > p:last-child {
+    margin-block-start: 0;
+    justify-self: start;
+  }
+
+  #contact .contact-layout {
+    grid-template-columns: minmax(22rem, 0.95fr) minmax(0, 1.05fr);
+    gap: var(--space-8);
+  }
+}
+
+/* ========================================
+   1400px+
+======================================== */
+
+@media (min-width: 87.5rem) {
+  main,
+  #navigation,
+  #footer {
+    width: min(100% - 5rem, 82rem);
+  }
+
+  #navigation {
+    padding-block: 1.25rem;
+  }
+
+  #hero {
+    min-height: calc(100vh - 7.5rem);
+    gap: var(--space-20);
+  }
+
+  #hero h1 {
+    max-width: 7.5ch;
+  }
+
+  #snapshot ul,
+  #highlights ul,
+  #tech-stack {
+    gap: var(--space-5);
+  }
+
+  #experience {
+    gap: var(--space-6);
+  }
+
+  #contact .contact-layout {
+    gap: var(--space-10);
+  }
+}
+
