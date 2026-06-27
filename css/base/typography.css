@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body{
+
+    font-family:var(--font-body);
+
+    font-size:var(--fs-md);
+
+    line-height:1.7;
+
+}
+
+h1,h2,h3,h4,h5{
+
+    font-family:var(--font-heading);
+
+    font-weight:var(--fw-bold);
+
+    line-height:1.2;
+
+}
+
+h1{
+
+    font-size:var(--fs-4xl);
+
+}
+
+h2{
+
+    font-size:var(--fs-3xl);
+
+}
+
+h3{
+
+    font-size:var(--fs-2xl);
+
+}
+
+p{
+
+    color:var(--text-secondary);
+
+}
