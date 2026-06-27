@@ -262,56 +262,80 @@
 
     <!-- Contact Section -->
     <section id="contact" aria-labelledby="contact-title">
-      <header>
-        <p>Contact</p>
-        <h2 id="contact-title">Open to conversations around enterprise data engineering and cloud modernization roles.</h2>
-      </header>
-      <p>Interested in discussing enterprise data engineering, cloud modernization, or new opportunities? I'd be happy to connect.</p>
-      <ul>
-        <li>
-          <a class="contact-card" href="https://www.linkedin.com/in/karthik-akash/" target="_blank" rel="noopener noreferrer" aria-label="Open Akash Karthik P LinkedIn profile in a new tab">
-            <span class="contact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M6.94 8.5v8.56H4.09V8.5h2.85Zm.19-2.65c0 .85-.64 1.53-1.61 1.53h-.02c-.94 0-1.55-.68-1.55-1.53 0-.87.63-1.54 1.58-1.54s1.56.67 1.6 1.54ZM19.91 12.15v4.91h-2.84v-4.58c0-1.15-.41-1.93-1.44-1.93-.79 0-1.25.53-1.46 1.04-.07.18-.09.44-.09.7v4.77h-2.84s.04-7.74 0-8.56h2.84v1.21c.38-.58 1.05-1.41 2.56-1.41 1.87 0 3.27 1.22 3.27 3.85Z" fill="currentColor"/>
-              </svg>
-            </span>
-            <span class="contact-card__body">
-              <span class="contact-card__title">LinkedIn</span>
-              <span class="contact-card__subtitle">Connect professionally</span>
-            </span>
-            <span class="contact-card__meta" aria-hidden="true">Open profile</span>
-          </a>
-        </li>
-        <li>
-          <a class="contact-card" href="mailto:akashkarthikp.work@gmail.com" aria-label="Send an email to Akash Karthik P">
-            <span class="contact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4 6.75A1.75 1.75 0 0 1 5.75 5h12.5A1.75 1.75 0 0 1 20 6.75v10.5A1.75 1.75 0 0 1 18.25 19H5.75A1.75 1.75 0 0 1 4 17.25V6.75Zm1.8.2 6.2 4.61 6.2-4.61H5.8Zm12.45 1.82-5.73 4.26a.88.88 0 0 1-1.04 0L5.75 8.77v8.48h12.5V8.77Z" fill="currentColor"/>
-              </svg>
-            </span>
-            <span class="contact-card__body">
-              <span class="contact-card__title">Email</span>
-              <span class="contact-card__subtitle">Let&apos;s start a conversation</span>
-            </span>
-            <span class="contact-card__meta" aria-hidden="true">Compose email</span>
-          </a>
-        </li>
-        <li>
-          <article class="contact-card contact-card--static" aria-label="Availability information">
-            <span class="contact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M12 2.75a6 6 0 0 1 6 6c0 4.33-4.56 10.12-5.52 11.3a.63.63 0 0 1-.96 0C10.56 18.87 6 13.08 6 8.75a6 6 0 0 1 6-6Zm0 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm7.25 7.5a.75.75 0 0 1 0 1.5H4.75a.75.75 0 0 1 0-1.5h14.5Z" fill="currentColor"/>
-              </svg>
-            </span>
-            <span class="contact-card__body">
-              <span class="contact-card__title">Availability</span>
-              <span class="contact-card__subtitle">Open to Data Engineering opportunities</span>
-              <span class="contact-card__detail">Chennai, India</span>
-              <span class="contact-card__detail">Remote • Hybrid • On-site</span>
-            </span>
-          </article>
-        </li>
-      </ul>
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <header>
+            <p>Contact</p>
+            <h2 id="contact-title">Let&apos;s Build Something Great Together.</h2>
+          </header>
+          <p>Interested in discussing enterprise data engineering, cloud modernization or new opportunities?</p>
+          <p>I&apos;d love to hear from you.</p>
+          <ul class="contact-details" aria-label="Contact details">
+            <li>
+              <article class="contact-detail contact-detail--location">
+                <span class="contact-detail__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 2.75a6 6 0 0 1 6 6c0 4.33-4.56 10.12-5.52 11.3a.63.63 0 0 1-.96 0C10.56 18.87 6 13.08 6 8.75a6 6 0 0 1 6-6Zm0 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm7.25 7.5a.75.75 0 0 1 0 1.5H4.75a.75.75 0 0 1 0-1.5h14.5Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="contact-detail__body">
+                  <span class="contact-detail__label">Location</span>
+                  <span class="contact-detail__value">Chennai, India</span>
+                </span>
+              </article>
+            </li>
+            <li>
+              <a class="contact-detail contact-detail--link contact-detail--action" href="https://www.linkedin.com/in/karthik-akash/" target="_blank" rel="noopener noreferrer" aria-label="Open Akash Karthik P LinkedIn profile in a new tab">
+                <span class="contact-detail__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M6.94 8.5v8.56H4.09V8.5h2.85Zm.19-2.65c0 .85-.64 1.53-1.61 1.53h-.02c-.94 0-1.55-.68-1.55-1.53 0-.87.63-1.54 1.58-1.54s1.56.67 1.6 1.54ZM19.91 12.15v4.91h-2.84v-4.58c0-1.15-.41-1.93-1.44-1.93-.79 0-1.25.53-1.46 1.04-.07.18-.09.44-.09.7v4.77h-2.84s.04-7.74 0-8.56h2.84v1.21c.38-.58 1.05-1.41 2.56-1.41 1.87 0 3.27 1.22 3.27 3.85Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="contact-detail__action-label">LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a class="contact-detail contact-detail--link contact-detail--action" href="mailto:connect@akashkarthik.in" aria-label="Send an email to Akash Karthik P at connect@akashkarthik.in">
+                <span class="contact-detail__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M4 6.75A1.75 1.75 0 0 1 5.75 5h12.5A1.75 1.75 0 0 1 20 6.75v10.5A1.75 1.75 0 0 1 18.25 19H5.75A1.75 1.75 0 0 1 4 17.25V6.75Zm1.8.2 6.2 4.61 6.2-4.61H5.8Zm12.45 1.82-5.73 4.26a.88.88 0 0 1-1.04 0L5.75 8.77v8.48h12.5V8.77Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="contact-detail__action-label">Mail to</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-labelledby="contact-form-title">
+          <input type="hidden" name="form-name" value="contact">
+          <div class="contact-form__header">
+            <p>Send a Message</p>
+            <h3 id="contact-form-title">Start the conversation</h3>
+            <p>Share a few details and I&apos;ll get back to you as soon as possible.</p>
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2">
+          </div>
+
+          <div class="contact-form__field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          </div>
+
+          <div class="contact-form__field contact-form__field--message">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="6" autocomplete="off" required minlength="20"></textarea>
+          </div>
+
+          <button class="contact-form__submit" type="submit">
+            <span class="contact-form__submit-label">Send Message</span>
+            <span class="contact-form__submit-status" aria-hidden="true">Sending...</span>
+          </button>
+        </form>
+      </div>
     </section>
   </main>
 

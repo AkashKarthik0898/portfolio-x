@@ -51,10 +51,6 @@
     grid-column: 1 / -1;
   }
 
-  #contact ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 /* ========================================
@@ -119,6 +115,11 @@
     gap: var(--space-5);
     align-items: center;
   }
+
+  #contact .contact-copy,
+  #contact .contact-form {
+    padding: var(--space-8);
+  }
 }
 
 /* ========================================
@@ -182,10 +183,6 @@
     grid-column: 1 / -1;
   }
 
-  #contact ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   #footer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -240,6 +237,11 @@
     margin-block-start: 0;
     justify-self: start;
   }
+
+  #contact .contact-layout {
+    grid-template-columns: minmax(22rem, 0.95fr) minmax(0, 1.05fr);
+    gap: var(--space-8);
+  }
 }
 
 /* ========================================
@@ -276,8 +278,8 @@
     gap: var(--space-6);
   }
 
-  #contact ul {
-    gap: var(--space-4);
+  #contact .contact-layout {
+    gap: var(--space-10);
   }
 }
 
