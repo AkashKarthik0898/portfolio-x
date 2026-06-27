@@ -1,0 +1,684 @@
+/* ========================================
+   Portfolio X - Home Styles
+   Homepage section styling only.
+======================================== */
+
+/* ========================================
+   Global Page Composition
+======================================== */
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.32), transparent 22%),
+    var(--color-bg);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 70%);
+  z-index: -1;
+}
+
+body > a:first-child {
+  position: absolute;
+  inset-block-start: var(--space-4);
+  inset-inline-start: var(--space-4);
+  z-index: 1000;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-text);
+  color: var(--color-accent-contrast);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transform: translateY(-220%);
+}
+
+body > a:first-child:focus-visible {
+  transform: translateY(0);
+}
+
+main {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+}
+
+main > section {
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+main > section:first-of-type {
+  border-top: 0;
+}
+
+/* ========================================
+   Navigation
+======================================== */
+
+#top {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: rgba(11, 17, 32, 0.78);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+#navigation {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+  padding-block: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+#navigation > p {
+  margin: 0;
+}
+
+#navigation > p:first-child {
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+#navigation > p:nth-of-type(2) {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+#navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+#navigation li {
+  margin: 0;
+}
+
+#navigation ul a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+#navigation ul a:hover,
+#navigation ul a:focus-visible {
+  color: var(--color-text);
+}
+
+#navigation > p:last-child {
+  margin: 0;
+}
+
+#navigation > p:last-child a {
+  width: fit-content;
+}
+
+/* ========================================
+   Shared Section Patterns
+======================================== */
+
+#hero,
+#snapshot,
+#philosophy,
+#experience,
+#highlights,
+#tech-stack,
+#resume,
+#contact,
+#footer {
+  position: relative;
+}
+
+#snapshot > header,
+#philosophy > header,
+#experience > header,
+#highlights > header,
+#tech-stack > header,
+#resume > header,
+#contact > header {
+  max-width: 44rem;
+}
+
+#snapshot > header > p:first-child,
+#philosophy > header > p:first-child,
+#experience > header > p:first-child,
+#highlights > header > p:first-child,
+#tech-stack > header > p:first-child,
+#resume > header > p:first-child,
+#contact > header > p:first-child {
+  display: inline-block;
+  margin-block: 0 var(--space-3);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+#snapshot > header h2,
+#philosophy > header h2,
+#experience > header h2,
+#highlights > header h2,
+#tech-stack > header h2,
+#resume > header h2,
+#contact > header h2 {
+  margin-block: 0;
+  max-width: 16ch;
+}
+
+#snapshot > header p:last-child,
+#experience > header p:last-child,
+#tech-stack > header p:last-child,
+#contact > header p:last-child,
+#resume > p,
+#philosophy > p,
+#experience article p,
+#highlights article p,
+#snapshot article p,
+#tech-stack article li,
+#contact > p,
+#footer p {
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   Hero
+======================================== */
+
+#hero {
+  display: grid;
+  gap: var(--space-10);
+  align-items: center;
+  padding-block-start: var(--space-16);
+}
+
+#hero > div > p:first-child {
+  display: inline-block;
+  margin-block: 0 var(--space-4);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+#hero h1 {
+  max-width: 10ch;
+  margin-block: 0 var(--space-5);
+}
+
+#hero h1 + p {
+  margin-block: 0;
+  max-width: 36rem;
+  font-size: var(--font-size-md);
+  color: var(--color-text-subtle);
+}
+
+#hero h1 + p + p {
+  margin-block: var(--space-5) 0;
+  max-width: 38rem;
+}
+
+#hero > div > p:last-child {
+  margin-block: var(--space-8) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+#hero > div > p:last-child a:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.875rem;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+#hero > div > p:last-child a:last-child:hover,
+#hero > div > p:last-child a:last-child:focus-visible {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+#hero aside {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+#hero aside h2 {
+  margin-block: 0 0.875rem;
+  font-size: var(--font-size-md);
+}
+
+#hero figure {
+  margin: 0;
+}
+
+#hero img {
+  width: 100%;
+  border-radius: calc(var(--radius-lg) - 0.25rem);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  background: var(--color-surface-strong);
+}
+
+#hero figcaption {
+  margin-block-start: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* ========================================
+   Engineering Snapshot
+======================================== */
+
+#snapshot ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+#snapshot li {
+  margin: 0;
+}
+
+#snapshot article {
+  height: 100%;
+  padding: var(--space-5);
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+#snapshot h3 {
+  margin-block: 0 0.75rem;
+  color: var(--color-text);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+#snapshot article p {
+  margin: 0;
+}
+
+/* ========================================
+   Engineering Philosophy
+======================================== */
+
+#philosophy {
+  display: grid;
+  gap: var(--space-6);
+}
+
+#philosophy > p {
+  margin: 0;
+  max-width: 42rem;
+  font-size: var(--font-size-md);
+}
+
+#philosophy ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+#philosophy li {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  border-left: 2px solid var(--color-accent);
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--color-text-subtle);
+}
+
+/* ========================================
+   Professional Experience
+======================================== */
+
+#experience {
+  display: grid;
+  gap: var(--space-5);
+}
+
+#experience article {
+  padding: var(--space-5);
+  background: rgba(17, 24, 39, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+#experience article h3 {
+  margin-block: 0 0.75rem;
+}
+
+#experience article p {
+  margin: 0;
+}
+
+/* ========================================
+   Engineering Highlights
+======================================== */
+
+#highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+#highlights li {
+  margin: 0;
+}
+
+#highlights article {
+  height: 100%;
+  padding: var(--space-5);
+  background: rgba(17, 24, 39, 0.74);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-lg);
+}
+
+#highlights article h3 {
+  margin-block: 0 0.75rem;
+}
+
+#highlights article p {
+  margin: 0;
+}
+
+/* ========================================
+   Technology Stack
+======================================== */
+
+#tech-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+#tech-stack > article {
+  padding: var(--space-5);
+  background: rgba(17, 24, 39, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-lg);
+}
+
+#tech-stack > article h3 {
+  margin-block: 0 0.875rem;
+}
+
+#tech-stack ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+#tech-stack li {
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-pill);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   Resume CTA
+======================================== */
+
+#resume {
+  padding: var(--space-8);
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.96), rgba(8, 17, 31, 0.98));
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+#resume header {
+  margin-block-end: var(--space-4);
+}
+
+#resume h2 {
+  max-width: 18ch;
+}
+
+#resume > p {
+  margin-block: 0;
+  max-width: 42rem;
+}
+
+#resume > p:last-child {
+  margin-block-start: var(--space-6);
+}
+
+/* ========================================
+   Contact
+======================================== */
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+#contact li {
+  margin: 0;
+}
+
+#contact li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  padding: 0.875rem 1rem;
+  background: rgba(17, 24, 39, 0.76);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+#contact li a:hover,
+#contact li a:focus-visible {
+  border-color: rgba(56, 189, 248, 0.28);
+  background: rgba(17, 24, 39, 0.94);
+}
+
+/* ========================================
+   Footer
+======================================== */
+
+#footer {
+  width: min(100% - 2rem, var(--container-max));
+  margin: 0 auto var(--space-8);
+  padding: var(--space-8) 0 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+#footer h2 {
+  font-size: var(--font-size-sm);
+  margin-block: 0 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+#footer p {
+  margin-block: 0.5rem 0;
+}
+
+#footer p:first-of-type {
+  color: var(--color-text);
+  font-family: var(--font-heading), sans-serif;
+  font-size: var(--font-size-lg);
+}
+
+#footer p:nth-of-type(2) {
+  color: var(--color-text-subtle);
+}
+
+#footer a {
+  color: var(--color-accent);
+  text-decoration-color: rgba(56, 189, 248, 0.5);
+}
+
+/* ========================================
+   Responsive Enhancements
+======================================== */
+
+@media (min-width: 40rem) {
+  #snapshot ul,
+  #highlights ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tech-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tech-stack > header,
+  #resume,
+  #contact,
+  #philosophy,
+  #experience,
+  #snapshot,
+  #highlights {
+    width: 100%;
+  }
+
+  #contact ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+  }
+}
+
+@media (min-width: 48rem) {
+  #navigation {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-4) var(--space-6);
+  }
+
+  #navigation > p:nth-of-type(2) {
+    margin: 0;
+  }
+
+  #navigation ul {
+    justify-content: center;
+  }
+
+  #hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    gap: var(--space-12);
+    min-height: calc(100vh - 7rem);
+    padding-block-start: var(--space-20);
+    padding-block-end: var(--space-20);
+  }
+
+  #experience {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #experience > header {
+    grid-column: 1 / -1;
+  }
+
+  #tech-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tech-stack > header {
+    grid-column: 1 / -1;
+  }
+
+  #resume {
+    display: grid;
+    gap: var(--space-5);
+    align-items: center;
+  }
+}
+
+@media (min-width: 64rem) {
+  #snapshot ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #highlights ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #tech-stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #tech-stack > header {
+    grid-column: 1 / -1;
+  }
+
+  #contact ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3) var(--space-8);
+    align-items: start;
+  }
+
+  #footer h2,
+  #footer p:nth-of-type(3),
+  #footer p:nth-of-type(5) {
+    grid-column: 1 / -1;
+  }
+}
+
+
