@@ -442,6 +442,59 @@
     observer.observe(snapshotSection);
   };
 
+  const initContactForm = () => {
+    const form = document.querySelector('.contact-form');
+
+    if (!form) {
+      return;
+    }
+
+    const message = form.querySelector('.contact-form__message');
+    const submitButton = form.querySelector('.contact-form__submit');
+
+    const setMessage = (text, status) => {
+      if (!message) {
+        return;
+      }
+
+      message.textContent = text;
+      message.classList.toggle('is-success', status === 'success');
+      message.classList.toggle('is-error', status === 'error');
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      form.setAttribute('aria-busy', 'true');
+      form.classList.add('is-loading');
+      submitButton?.setAttribute('disabled', 'true');
+      setMessage('', null);
+
+      try {
+        const response = await fetch(form.getAttribute('action') || '/index.html', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed');
+        }
+
+        form.reset();
+        setMessage('Thanks. Your message has been sent.', 'success');
+      } catch (error) {
+        setMessage('Your message could not be sent. Please try again or email directly.', 'error');
+      } finally {
+        form.removeAttribute('aria-busy');
+        form.classList.remove('is-loading');
+        submitButton?.removeAttribute('disabled');
+      }
+    });
+  };
+
   onReady(() => {
     injectEnhancementStyles();
 
@@ -456,6 +509,6 @@
     initActiveNavigation();
     initRevealAnimations();
     initStatsCounter();
+    initContactForm();
   });
 })();
-

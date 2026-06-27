@@ -313,8 +313,12 @@
           </ul>
         </div>
 
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" aria-labelledby="contact-form-title">
+        <form class="contact-form" name="contact" method="POST" action="/index.html" data-netlify="true" netlify-honeypot="bot-field" aria-labelledby="contact-form-title">
           <input type="hidden" name="form-name" value="contact">
+          <p class="contact-form__bot-field" aria-hidden="true">
+            <label for="contact-bot-field">Leave this field empty</label>
+            <input id="contact-bot-field" name="bot-field" tabindex="-1" autocomplete="off">
+          </p>
           <div class="contact-form__header">
             <p>Send a Message</p>
             <h3 id="contact-form-title">Start the conversation</h3>
@@ -340,6 +344,7 @@
             <span class="contact-form__submit-label">Send Message</span>
             <span class="contact-form__submit-status" aria-hidden="true">Sending...</span>
           </button>
+          <p class="contact-form__message" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -357,5 +362,4 @@
   <script src="js/main.js" defer></script>
 </body>
 </html>
-
 
