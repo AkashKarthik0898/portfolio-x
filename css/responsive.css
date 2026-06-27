@@ -13,6 +13,10 @@
     width: min(100% - 2.5rem, var(--container-max));
   }
 
+  main > section {
+    padding-block: var(--space-24);
+  }
+
   #navigation {
     padding-block: var(--space-5);
   }
@@ -24,6 +28,10 @@
   #hero {
     padding-block-start: var(--space-20);
     gap: var(--space-12);
+  }
+
+  #hero h1 {
+    max-width: 8.5ch;
   }
 
   #hero > div > p:last-child {
@@ -58,6 +66,10 @@
     width: min(100% - 3rem, var(--container-max));
   }
 
+  main > section {
+    padding-block: var(--space-24);
+  }
+
   #navigation {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -79,6 +91,10 @@
     min-height: calc(100vh - 7rem);
     padding-block-start: var(--space-20);
     padding-block-end: var(--space-20);
+  }
+
+  #hero aside {
+    padding: var(--space-8);
   }
 
   #hero h1 + p {
@@ -114,6 +130,10 @@
     width: min(100% - 4rem, var(--container-max));
   }
 
+  main > section {
+    padding-block: var(--space-28);
+  }
+
   #navigation {
     gap: var(--space-4) var(--space-8);
   }
@@ -124,6 +144,10 @@
 
   #hero {
     grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  }
+
+  #hero h1 {
+    max-width: 8ch;
   }
 
   #snapshot ul {
@@ -181,6 +205,10 @@
 ======================================== */
 
 @media (min-width: 75rem) {
+  main > section {
+    padding-block: var(--space-32);
+  }
+
   #hero {
     grid-template-columns: minmax(0, 1.25fr) minmax(22rem, 0.75fr);
     gap: var(--space-16);
@@ -225,9 +253,17 @@
     width: min(100% - 5rem, 82rem);
   }
 
+  #navigation {
+    padding-block: 1.25rem;
+  }
+
   #hero {
     min-height: calc(100vh - 7.5rem);
     gap: var(--space-20);
+  }
+
+  #hero h1 {
+    max-width: 7.5ch;
   }
 
   #snapshot ul,

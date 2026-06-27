@@ -1,0 +1,70 @@
+/* ========================================
+   Portfolio X - Animations
+   Tasteful motion only.
+======================================== */
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes shimmer-border {
+  0% {
+    background-position: 0 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+#hero aside {
+  animation: hero-float 10s ease-in-out infinite;
+}
+
+#snapshot article,
+#highlights article,
+#contact li a,
+#tech-stack li,
+#experience article {
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+}
+
+#resume::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(56, 189, 248, 0.12), rgba(255, 255, 255, 0.03), rgba(56, 189, 248, 0.12));
+  background-size: 200% 200%;
+  animation: shimmer-border 14s linear infinite;
+  pointer-events: none;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero aside,
+  #resume::after {
+    animation: none !important;
+  }
+}
+
+
