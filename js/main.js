@@ -1,5 +1,5 @@
 (() => {
-  const MOBILE_BREAKPOINT = 767.98;
+  const MOBILE_BREAKPOINT = 768;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const onReady = (callback) => {
@@ -110,11 +110,16 @@
     }
 
     const updateScrollState = () => {
-      header.dataset.scrolled = window.scrollY > 12 ? 'true' : 'false';
+      if (window.innerWidth <= MOBILE_BREAKPOINT) {
+        header.dataset.scrolled = window.scrollY > 12 ? 'true' : 'false';
+      } else {
+        header.dataset.scrolled = 'false';
+      }
     };
 
     updateScrollState();
     window.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState, { passive: true });
   };
 
   const initMobileNavigation = (nav) => {
@@ -141,7 +146,8 @@
     toggleButton.setAttribute('aria-expanded', 'false');
     toggleButton.setAttribute('aria-controls', navListId);
     toggleButton.setAttribute('aria-label', 'Open navigation menu');
-    toggleButton.textContent = 'Menu';
+    toggleButton.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
+    toggleButton.setAttribute('title', 'Menu');
 
     nav.insertBefore(toggleButton, navList);
 
@@ -156,7 +162,7 @@
         toggleButton.hidden = true;
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.setAttribute('aria-label', 'Open navigation menu');
-        toggleButton.textContent = 'Menu';
+        nav.dataset.menuOpen = 'false';
         isOpen = false;
         return;
       }
@@ -166,7 +172,12 @@
       ctaContainer.hidden = !isOpen;
       toggleButton.setAttribute('aria-expanded', String(isOpen));
       toggleButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      toggleButton.textContent = isOpen ? 'Close' : 'Menu';
+      nav.dataset.menuOpen = isOpen ? 'true' : 'false';
+
+      const header = nav.closest('#top');
+      if (header) {
+        header.dataset.scrolled = window.scrollY > 12 && !isOpen ? 'true' : 'false';
+      }
     };
 
     const closeMenu = () => {
