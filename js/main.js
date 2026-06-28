@@ -146,7 +146,8 @@
     toggleButton.setAttribute('aria-expanded', 'false');
     toggleButton.setAttribute('aria-controls', navListId);
     toggleButton.setAttribute('aria-label', 'Open navigation menu');
-    toggleButton.textContent = 'Menu';
+    toggleButton.innerHTML = '<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>';
+    toggleButton.setAttribute('title', 'Menu');
 
     nav.insertBefore(toggleButton, navList);
 
@@ -161,7 +162,6 @@
         toggleButton.hidden = true;
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.setAttribute('aria-label', 'Open navigation menu');
-        toggleButton.textContent = 'Menu';
         nav.dataset.menuOpen = 'false';
         isOpen = false;
         return;
@@ -172,7 +172,6 @@
       ctaContainer.hidden = !isOpen;
       toggleButton.setAttribute('aria-expanded', String(isOpen));
       toggleButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      toggleButton.textContent = isOpen ? 'Close' : 'Menu';
       nav.dataset.menuOpen = isOpen ? 'true' : 'false';
 
       const header = nav.closest('#top');
