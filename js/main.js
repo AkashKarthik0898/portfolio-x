@@ -1,5 +1,5 @@
 (() => {
-  const MOBILE_BREAKPOINT = 767.98;
+  const MOBILE_BREAKPOINT = 768;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const onReady = (callback) => {
@@ -162,6 +162,7 @@
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.setAttribute('aria-label', 'Open navigation menu');
         toggleButton.textContent = 'Menu';
+        nav.dataset.menuOpen = 'false';
         isOpen = false;
         return;
       }
