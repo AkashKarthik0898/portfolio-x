@@ -296,6 +296,17 @@
       });
     };
 
+    // Add click handlers to update active state immediately
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          setActive(targetId);
+        }
+      });
+    });
+
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         (entries) => {
@@ -308,8 +319,8 @@
           }
         },
         {
-          rootMargin: '-30% 0px -55% 0px',
-          threshold: [0.15, 0.35, 0.6]
+          rootMargin: '-20% 0px -60% 0px',
+          threshold: [0.1, 0.25, 0.5, 0.75]
         }
       );
 

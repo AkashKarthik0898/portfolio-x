@@ -153,6 +153,10 @@ main > section:first-of-type {
   transform: translateY(-1px);
 }
 
+#navigation ul a[aria-current="page"] {
+  color: var(--color-accent);
+}
+
 #navigation ul a:hover::after,
 #navigation ul a:focus-visible::after,
 #navigation ul a[aria-current="page"]::after {
