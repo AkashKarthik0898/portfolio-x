@@ -506,6 +506,50 @@
     });
   };
 
+  const initExperienceYears = () => {
+    const element = document.getElementById('experience-years');
+
+    if (!element) {
+      return;
+    }
+
+    const startDateStr = element.dataset.startDate;
+
+    if (!startDateStr) {
+      return;
+    }
+
+    const startDate = new Date(startDateStr);
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    if (now.getDate() < startDate.getDate()) {
+      months--;
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+    }
+
+    let displayText;
+    if (years > 0 && months > 0) {
+      displayText = `${years} years ${months} months`;
+    } else if (years > 0) {
+      displayText = `${years} years`;
+    } else {
+      displayText = `${months} months`;
+    }
+
+    element.textContent = displayText;
+  };
+
   onReady(() => {
     injectEnhancementStyles();
 
@@ -520,6 +564,7 @@
     initActiveNavigation();
     initRevealAnimations();
     initStatsCounter();
+    initExperienceYears();
     initContactForm();
   });
 })();
