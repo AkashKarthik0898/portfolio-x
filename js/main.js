@@ -251,6 +251,22 @@
         return;
       }
 
+      // Special handling for #top - scroll to page top
+      if (href === '#top') {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          closeMenu?.();
+
+          window.scrollTo({
+            top: 0,
+            behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+          });
+
+          window.history.replaceState(null, '', href);
+        });
+        return;
+      }
+
       const target = document.querySelector(href);
 
       if (!target) {
