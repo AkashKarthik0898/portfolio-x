@@ -161,14 +161,26 @@
     align-items: start;
   }
 
-  #philosophy > header,
-  #philosophy > p:first-of-type {
+  #philosophy > header {
     grid-column: 1;
+    grid-row: 1;
+    align-self: start;
   }
 
-  #philosophy > p:last-of-type,
   #philosophy ul {
     grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  #philosophy > p:first-of-type {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #philosophy > p:last-of-type {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   #highlights ul {

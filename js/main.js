@@ -251,6 +251,22 @@
         return;
       }
 
+      // Special handling for #top - scroll to page top
+      if (href === '#top') {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          closeMenu?.();
+
+          window.scrollTo({
+            top: 0,
+            behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+          });
+
+          window.history.replaceState(null, '', href);
+        });
+        return;
+      }
+
       const target = document.querySelector(href);
 
       if (!target) {
@@ -296,6 +312,17 @@
       });
     };
 
+    // Add click handlers to update active state immediately
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          setActive(targetId);
+        }
+      });
+    });
+
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         (entries) => {
@@ -308,8 +335,8 @@
           }
         },
         {
-          rootMargin: '-30% 0px -55% 0px',
-          threshold: [0.15, 0.35, 0.6]
+          rootMargin: '-20% 0px -60% 0px',
+          threshold: [0.1, 0.25, 0.5, 0.75]
         }
       );
 
@@ -506,6 +533,50 @@
     });
   };
 
+  const initExperienceYears = () => {
+    const element = document.getElementById('experience-years');
+
+    if (!element) {
+      return;
+    }
+
+    const startDateStr = element.dataset.startDate;
+
+    if (!startDateStr) {
+      return;
+    }
+
+    const startDate = new Date(startDateStr);
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    if (now.getDate() < startDate.getDate()) {
+      months--;
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+    }
+
+    let displayText;
+    if (years > 0 && months > 0) {
+      displayText = `${years} years ${months} months`;
+    } else if (years > 0) {
+      displayText = `${years} years`;
+    } else {
+      displayText = `${months} months`;
+    }
+
+    element.textContent = displayText;
+  };
+
   onReady(() => {
     injectEnhancementStyles();
 
@@ -520,6 +591,7 @@
     initActiveNavigation();
     initRevealAnimations();
     initStatsCounter();
+    initExperienceYears();
     initContactForm();
   });
 })();
